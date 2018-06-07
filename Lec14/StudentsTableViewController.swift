@@ -22,7 +22,8 @@ class StudentsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         getAPIStudents { (res) in
-            self.students =
+            self.students = res.rows
+            self.tableView.reloadData() // reload the table view
         }
         
         
@@ -48,10 +49,13 @@ class StudentsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath) as! students2TableViewCell
 
         // Configure the cell...
-
+        
+        cell.firstNameLabel.text = students[indexPath.item].firstname
+        cell.lastNameLabel.text = students[indexPath.item].lastname
+        cell.emailLabel.text = students[indexPath.item].email
         return cell
     }
     
