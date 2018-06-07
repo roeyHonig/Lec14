@@ -8,6 +8,17 @@
 
 import Foundation
 
+// !!!!! swift 4 has something called codable and it will allow us to parse json very easy, but we have to create a struct \ class exactlly similaer to the json
+/*
+ like , let's say:
+ 
+ struct studentAPI {
+ var rows: [Student]
+ }
+ 
+ 
+ */
+
 let apiAddress = "https://roeyhonigstudentserverapp.herokuapp.com/student"
 let url = URL(string: apiAddress)! // the url is valid and we know it's ok (unlike if the user types something)
 // 1). URLSession -> VS URLConnection (connection opens and closes the port, session is much smarter, it has history, it can save things to the cacuch so to not download the same pic)
@@ -20,6 +31,8 @@ typealias Json = Dictionary<String, Any>
 
 
 // TODO: Discuss Observer Pattern
+
+/*
 func getStudents() {
     // Data: Binary Data -> 010101
     //URLResponse: status code_emask
@@ -45,6 +58,23 @@ func getStudents() {
 
     //
 }
+*/
+ 
+ 
+ 
+ 
+func getAPIStudents() {
+    session.dataTask(with: url) { (data, res, err) in
+        guard let data = data else {return}
+        // if we got here, we have data
+        let decoder = JSONDecoder()
+        guard let result = try? decoder.decode(studentAPI.self, from: data) else {return /*SHOW DIALOG*/}
+        print(result)
+    }.resume()
+}
+
+
+/*
 
 // we have Data -> [Student]()
 func deserilazation(data: Data) -> [Student] {
@@ -70,5 +100,9 @@ func deserilazation(data: Data) -> [Student] {
     }
     return students
 }
+
+*/
+
+
 
 

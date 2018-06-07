@@ -27,7 +27,8 @@ class ViewController: UIViewController {
         }
         */
         
-        getStudents()
+        //getStudents()
+        getAPIStudents()
         
         
         //
