@@ -35,8 +35,16 @@ func getStudents() {
                     // cheack if we have an eror?
                     // else use the data
                     do {
-                       let result =  try JSONSerialization.jsonObject(with: validData, options: []) as! Json
-                        print(result)
+                       let json =  try JSONSerialization.jsonObject(with: validData, options: []) as! Json
+                        let rows = json["rows"]! as! [Json]  //why ! because its optional, because we cann't be sure that there actually is a key called "rows" in the json, but we actually // do know , we know for sure that the value of the key "rows" is an array of Json oblects
+                        
+                        for row in rows {
+                            let firstName = row["firstname"]! as! String
+                            print(firstName)
+                            
+                        }
+                        
+                        
                     }
                     catch let err {
                         print(err) // TODO Error call back - show an alert dialog "no connection to server"
