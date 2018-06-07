@@ -79,8 +79,9 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="emailLabel" destination="5tv-6J-qUF" id="FTT-sx-nYD"/>
+                        <outlet property="firstName" destination="rTD-wg-Glb" id="gbQ-fu-4iL"/>
                         <outlet property="firstNameLabel" destination="rTD-wg-Glb" id="29B-SA-a4J"/>
+                        <outlet property="lastName" destination="WHU-Lh-vse" id="ezG-pv-2Hh"/>
                         <outlet property="lastNameLabel" destination="WHU-Lh-vse" id="8Pg-KU-IZS"/>
                     </connections>
                 </tableViewController>
