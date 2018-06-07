@@ -20,14 +20,14 @@ class ViewController: UIViewController {
         // the system organize the ques (FIFO) of the tasks
         
         
-        
+        /*
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             // we caould also do something like performeSegue
             print("Haf-Saka")
         }
+        */
         
-        
-        
+        getStudents()
         
         
         //
