@@ -21,9 +21,14 @@ class StudentsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.beginRefreshing()
+        
+        
         getAPIStudents { (res) in
             self.students = res.rows
             self.tableView.reloadData() // reload the table view
+            self.refreshControl?.endRefreshing()
         }
         
         
