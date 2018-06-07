@@ -60,17 +60,22 @@ func getStudents() {
 }
 */
  
- 
- 
- 
-func getAPIStudents() {
+ // we're defining a function, one of it's parmeters is a function byitself, this function is our callback,
+// what's the @escaping annotation means? , it's swift way of notifying me, the programmer, that this thing will breach the scope of the getAPIStudents func
+// and enter a all new other scope (in our case that scope can be found at the ViewController.swift)
+func getAPIStudents(callback: @escaping (studentAPI)-> Void) {
     session.dataTask(with: url) { (data, res, err) in
         guard let data = data else {return}
         // if we got here, we have data
         let decoder = JSONDecoder()
         guard let result = try? decoder.decode(studentAPI.self, from: data) else {return /*SHOW DIALOG*/}
-        print(result)
+        
+        callback(result)
+        
+        //print(result.rows)
     }.resume()
+    
+    
 }
 
 

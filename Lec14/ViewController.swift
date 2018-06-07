@@ -27,8 +27,13 @@ class ViewController: UIViewController {
         }
         */
         
+       
+        
         //getStudents()
-        getAPIStudents()
+        getAPIStudents { (students) in
+            // this is the callback
+            print(students.rows)
+        }
         
         
         //
