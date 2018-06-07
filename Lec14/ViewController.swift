@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            // we caould also do something like performeSegue
             print("Haf-Saka")
         }
         
