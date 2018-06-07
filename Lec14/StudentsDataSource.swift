@@ -70,7 +70,12 @@ func getAPIStudents(callback: @escaping (studentAPI)-> Void) {
         let decoder = JSONDecoder()
         guard let result = try? decoder.decode(studentAPI.self, from: data) else {return /*SHOW DIALOG*/}
         
-        callback(result)
+        // Run code on the UI Thread
+        DispatchQueue.main.async {
+            callback(result)
+        }
+        
+        
         
         //print(result.rows)
     }.resume()
