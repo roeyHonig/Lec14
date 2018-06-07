@@ -16,6 +16,8 @@
 		6DBF6C7D20C9091900EB003E /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF6C7C20C9091900EB003E /* GCD.swift */; };
 		6DBF6C7F20C91F1F00EB003E /* StudentsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF6C7E20C91F1F00EB003E /* StudentsDataSource.swift */; };
 		6DBF6C8120C92D0900EB003E /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF6C8020C92D0900EB003E /* Student.swift */; };
+		6DBF6C8320C95BA300EB003E /* StudentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF6C8220C95BA300EB003E /* StudentsTableViewController.swift */; };
+		6DBF6C8520C95D2200EB003E /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBF6C8420C95D2200EB003E /* StudentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		6DBF6C7C20C9091900EB003E /* GCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		6DBF6C7E20C91F1F00EB003E /* StudentsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsDataSource.swift; sourceTree = "<group>"; };
 		6DBF6C8020C92D0900EB003E /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		6DBF6C8220C95BA300EB003E /* StudentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsTableViewController.swift; sourceTree = "<group>"; };
+		6DBF6C8420C95D2200EB003E /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				6DBF6C7C20C9091900EB003E /* GCD.swift */,
 				6DBF6C7E20C91F1F00EB003E /* StudentsDataSource.swift */,
 				6DBF6C8020C92D0900EB003E /* Student.swift */,
+				6DBF6C8220C95BA300EB003E /* StudentsTableViewController.swift */,
+				6DBF6C8420C95D2200EB003E /* StudentTableViewCell.swift */,
 			);
 			path = Lec14;
 			sourceTree = "<group>";
@@ -153,7 +159,9 @@
 				6DBF6C6A20C9074A00EB003E /* ViewController.swift in Sources */,
 				6DBF6C7020C9074A00EB003E /* Lec14.xcdatamodeld in Sources */,
 				6DBF6C7D20C9091900EB003E /* GCD.swift in Sources */,
+				6DBF6C8320C95BA300EB003E /* StudentsTableViewController.swift in Sources */,
 				6DBF6C6820C9074A00EB003E /* AppDelegate.swift in Sources */,
+				6DBF6C8520C95D2200EB003E /* StudentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
