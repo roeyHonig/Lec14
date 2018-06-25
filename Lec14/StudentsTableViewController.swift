@@ -9,12 +9,15 @@
 import UIKit
 
 class StudentsTableViewController: UITableViewController {
+    @IBOutlet weak var buffering: UIActivityIndicatorView!
     
     var students: [Student] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       // buffering.stopAnimating()
+        //buffering.hidesWhenStopped = true
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,21 +26,36 @@ class StudentsTableViewController: UITableViewController {
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.beginRefreshing()
+        refreshControl?.addTarget(self, action: #selector(self.notificationReceived), for: .valueChanged)
+        
+        retriveData(bufferingIndicator: buffering)
         
         
-        getAPIStudents { (res) in
-            self.students = res.rows
-            self.tableView.reloadData() // reload the table view
-            self.refreshControl?.endRefreshing()
-        }
         
         
         //
     }
 
+    @objc func notificationReceived() {
+        print("swipe")
+        self.refreshControl?.endRefreshing()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    func retriveData(bufferingIndicator: UIActivityIndicatorView) {
+       // self.buffering.startAnimating()
+        getAPIStudents { (res) in
+           // self.buffering.stopAnimating()
+            self.students = res.rows
+            self.tableView.reloadData() // reload the table view
+            self.refreshControl?.endRefreshing()
+        }
     }
 
     // MARK: - Table view data source
