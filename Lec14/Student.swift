@@ -12,9 +12,9 @@ import Foundation
 // tel swift that this struct should be codable (which is an interface)
 /*set custom names*/
 struct Student: Codable {
-    var firstname: String
-    var lastname: String
-    var email: String
+    var firstname: String?
+    var lastname: String?
+    var email: String?
     // id must have
     var id: Int
     

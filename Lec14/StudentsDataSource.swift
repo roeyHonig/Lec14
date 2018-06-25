@@ -19,7 +19,7 @@ import Foundation
  
  */
 
-let apiAddress = "https://roeyhonigstudentserverapp.herokuapp.com/student"
+let apiAddress = "https://enigmatic-oasis-37206.herokuapp.com/student"
 let url = URL(string: apiAddress)! // the url is valid and we know it's ok (unlike if the user types something)
 // 1). URLSession -> VS URLConnection (connection opens and closes the port, session is much smarter, it has history, it can save things to the cacuch so to not download the same pic)
 let session = URLSession.shared // sheared session for the app

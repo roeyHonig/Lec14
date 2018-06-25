@@ -58,9 +58,18 @@ class StudentsTableViewController: UITableViewController {
 
         // Configure the cell...
         
+        
+        
         cell.firstNameLabel.text = students[indexPath.row].firstname
         cell.lastNameLabel.text = students[indexPath.row].lastname
         cell.emailLabel.text = students[indexPath.row].email
+ 
+        
+        /*
+       cell.firstNameLabel.text = students[indexPath.row].firstname != nil ? students[indexPath.row].firstname : "No fName Value"
+        cell.lastNameLabel.text = students[indexPath.row].lastname != nil ? students[indexPath.row].lastname : "No lName Value"
+        cell.emailLabel.text = students[indexPath.row].email != nil ? students[indexPath.row].email : "No email Value"
+        */
         return cell
     }
     
