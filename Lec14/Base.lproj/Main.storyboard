@@ -71,9 +71,6 @@
                             <outlet property="delegate" destination="dua-NV-1jc" id="Gyt-k3-QSb"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <outlet property="buffering" destination="huc-Yz-HWT" id="QZX-ZH-4aG"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esw-BI-G49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,15 +9,12 @@
 import UIKit
 
 class StudentsTableViewController: UITableViewController {
-    @IBOutlet weak var buffering: UIActivityIndicatorView!
     
     var students: [Student] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // buffering.stopAnimating()
-        //buffering.hidesWhenStopped = true
-        
+       
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,7 +25,8 @@ class StudentsTableViewController: UITableViewController {
         self.refreshControl?.beginRefreshing()
         refreshControl?.addTarget(self, action: #selector(self.notificationReceived), for: .valueChanged)
         
-        retriveData(bufferingIndicator: buffering)
+        retriveData()
+        
         
         
         
@@ -38,7 +36,9 @@ class StudentsTableViewController: UITableViewController {
 
     @objc func notificationReceived() {
         print("swipe")
-        self.refreshControl?.endRefreshing()
+        
+        self.refreshControl?.beginRefreshing()
+        retriveData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,10 +48,10 @@ class StudentsTableViewController: UITableViewController {
     
     
     
-    func retriveData(bufferingIndicator: UIActivityIndicatorView) {
-       // self.buffering.startAnimating()
+    func retriveData() {
+        print("retriving data")
+   
         getAPIStudents { (res) in
-           // self.buffering.stopAnimating()
             self.students = res.rows
             self.tableView.reloadData() // reload the table view
             self.refreshControl?.endRefreshing()
