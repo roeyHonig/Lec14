@@ -20,8 +20,11 @@ class ViewController: UIViewController {
         // the system organize the ques (FIFO) of the tasks
         
         
-        
+        // exacute an asycronic task, in the main thread (The UI Theread)
+        // excaute it at a later date, which is the deadline
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            // so according to the parmeters, this task will excute 5 seconds after loading the view
+            
             // we caould also do something like performeSegue
             print("Haf-Saka")
         }
